@@ -8,14 +8,17 @@ We recommend you **do not** use Python to answer these questions. Instead, based
 # Pandas
 
 
-?: Following is a preview of the DataFrame `df`:   
+?: Question 1    
 
-```python
-    x      y  z
-0   1.0  NaN  1
-1   2.0  NaN  2
-2   NaN  1.0  3
-```
+
+Following is a preview of the DataFrame `df`:   
+
+
+|   x |   y |   z |
+|-----|-----|-----|
+|   1 | NaN |   1 |
+|   2 | NaN |   2 |
+| NaN |   1 |   3 |
 
 Match the commands with their expected outputs: 
 
@@ -51,7 +54,10 @@ dtype: bool
  
 
 
-?: Following is a preview of the DataFrames `df_1` and `df_2`. Which of the following statement(s) are true? 
+?: Question 2   
+
+
+Following is a preview of the DataFrames `df_1` and `df_2`. Which of the following statement(s) are true? 
 
 `df_1`  
 
@@ -82,7 +88,10 @@ dtype: bool
 
 
 
-?: Following is a preview of the DataFrames `customers` and `orders`. You want to add the `city` and `state` of all the customers who placed an order in `df_2`. Which type of join is appropriate for this task? 
+?: Question 3    
+
+
+Following is a preview of the DataFrames `customers` and `orders`. You want to add the `city` and `state` of all the customers who placed an order in `orders`. Which type of join is appropriate for this task? 
 
 
 `customers`
@@ -93,18 +102,22 @@ dtype: bool
 |  2 | Boston  |  MA |
 |  3 | Cambridge  | MA  |
 |  4 | New York  | NY  |
+|  5 | New York  | NY  |
 
 
 `orders`
 
-| order_id  | user_id  | order_amount  |
-|---|---|---|
-|1022   | 4  | 100  | 
-|1023   | 1  | 120 |
-|1024   | 3  | 200  | 
-|1025   | 2  | 150  | 
-|1026   | 2  | 50  |
-|1027   | 1  | 200  | 
+
+|   order_id |   user_id |   order_amount |
+|------------|-----------|----------------|
+|       1022 |         4 |            100 |
+|       1023 |         1 |            120 |
+|       1024 |         3 |            200 |
+|       1025 |         2 |            150 |
+|       1026 |         2 |             50 |
+|       1027 |         1 |            200 |
+|       1028 |         1 |             70 |
+|       1029 |         2 |             90 | 
 
 
 ( ) Inner Join
@@ -113,18 +126,23 @@ dtype: bool
 
 
 
-?: After correctly joining the above `customers` and `orders` tables, the output looks like this: 
+?: Question 4    
+
+
+After correctly joining the above `customers` and `orders` tables, the output looks like this: 
 
 `orders_merged` 
 
-|user_id   | city  | state  | order_id  | order_amount  |
-|---|---|---|---|---|
-| 1  |New York   | NY  | 1023  | 120  |
-| 1  |New York   | NY  | 1027  | 200  |
-| 2  |Boston   | MA  | 1025  |  150 |
-| 2  |Boston   | MA  | 1026  | 50  |
-| 3  |Cambridge   | NY  | 1024  | 200  |
-| 4  |New York   |  NY | 1022  | 100  |
+|   user_id | city      | state   |   order_id |   order_amount |
+|-----------|-----------|---------|------------|----------------|
+|         1 | New York  | NY      |       1023 |            120 |
+|         1 | New York  | NY      |       1027 |            200 |
+|         1 | New York  | NY      |       1028 |             70 |
+|         2 | Boston    | MA      |       1025 |            150 |
+|         2 | Boston    | MA      |       1026 |             50 |
+|         2 | Boston    | MA      |       1029 |             90 |
+|         3 | Cambridge | MA      |       1024 |            200 |
+|         4 | New York  | NY      |       1022 |            100 |
 
 How would you aggregate `orders_merged` to obtain the sum and average `order_amount` aggregated across `state`, `city`, and `user_id`? 
 
@@ -135,20 +153,19 @@ How would you aggregate `orders_merged` to obtain the sum and average `order_amo
 (X) `orders_merged.groupby(['state', 'city', 'user_id'])['order_amount'].agg(['sum', 'mean'])` 
 
 
-?: If you chose the correct option above, your aggregated result will look like: 
+?: Question 5    
+
+
+If you chose the correct option above, your aggregated result will look like: 
 
 `orders_aggregated`
 
+![to_unstack_stack](https://raw.githubusercontent.com/learn-co-curriculum/dsc-quiz-data-cleaning-pandas/master/images/to_unstack_stack.png) 
 
-<p align="center">
-<img src="images/to_unstack_stack.png" width="500">
-</p>
 
 Which command would you use to reshape the above DataFrame as shown below: 
 
-<p align="center">
-<img src="images/unstacked.png" width="500">
-</p>
+![unstacked](https://raw.githubusercontent.com/learn-co-curriculum/dsc-quiz-data-cleaning-pandas/master/images/unstacked.png)
 
 
 ( ) `orders_aggregated.stack(0)`  
@@ -157,13 +174,13 @@ Which command would you use to reshape the above DataFrame as shown below:
 ( ) `orders_aggregated.unstack()`
 
 
-?: Again, which command would you use reshape the above `orders_aggregated` DataFrame to: 
+?: Question 6   
 
 
-<p align="center">
-<img src="images/stacked.png" width="500">
-</p>
+Again, which command would you use reshape the above `orders_aggregated` DataFrame to: 
 
+
+![stacked](https://raw.githubusercontent.com/learn-co-curriculum/dsc-quiz-data-cleaning-pandas/master/images/stacked.png)
 
 ( ) `orders_aggregated.unstack(0)` 
 ( ) `orders_aggregated.stack(1)`    
