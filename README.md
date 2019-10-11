@@ -53,30 +53,32 @@ dtype: bool
 
 ?: Following is a preview of the DataFrames `df_1` and `df_2`. Which of the following statement(s) are true? 
 
+`df_1`  
 
-```python
-df_1
+|date   |temperature   |humidity   |
+|---|---|---|
+|2018/01/01   | 70  | 85  |
+|2018/01/02   | 68  |  80 |
+|2018/01/03   | 71  |  80 |
 
-          date  temperature humidity
-0   2018/01/01           70       65
-1   2018/01/02           68       70
-2   2018/01/03           71       70
+`df_2`  
 
-df_2
 
-          date     variable value
-0   2018/01/01  temperature    70
-1   2018/01/02  temperature    68
-2   2018/01/03  temperature    71
-3   2018/01/01     humidity    65
-4   2018/01/02     humidity    70
-5   2018/01/03     humidity    70
-```
+|date   |variable   |value   |
+|---|---|---|
+|2018/01/01   |temperature   | 70  |
+|2018/01/02   |temperature  |  68 |
+|2018/01/03   |temperature   |  71 | 
+|2018/01/01   |humidity   | 85  |
+|2018/01/02   |humidity   |  80 |
+|2018/01/03   |humidity   |  80 |
+
+
 
 [ ] `df_1` is in long format because each row represents an observation and each column represents a variable  
 [X] `df_1` is in wide format because each row represents an observation and each column represents a variable  
 [ ] `df_2` is in wide format because each observation is spread across multiple rows and there is only one variable in each row  
-[X] `df_2` is in long format because each observation is spread across multiple rows and there is only one variable for a data point in time in each row   
+[X] `df_2` is in long format because each observation is spread across multiple rows and there is only one corresponding variable for a data point in time in each row   
 
 
 
