@@ -76,7 +76,7 @@ df_2
 [ ] `df_1` is in long format because each row represents an observation and each column represents a variable  
 [X] `df_1` is in wide format because each row represents an observation and each column represents a variable  
 [ ] `df_2` is in wide format because each observation is spread across multiple rows and there is only one variable in each row  
-[X] `df_2` is in long format because each observation is spread across multiple rows and there is only one variable in each row   
+[X] `df_2` is in long format because each observation is spread across multiple rows and there is only one variable for a data point in time in each row   
 
 
 
