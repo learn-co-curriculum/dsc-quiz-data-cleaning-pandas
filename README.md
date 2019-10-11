@@ -18,13 +18,17 @@ Following is a preview of the DataFrame `df`:
 |-----|-----|-----|
 |   1 | NaN |   1 |
 |   2 | NaN |   2 |
-| NaN |   1 |   3 |
+| NaN |   1 |   3 |    
+
+
 
 Match the commands with their expected outputs: 
 
 1. `df.notna().sum()`  
 2. `df.isna().any()`  
-3. `df['z'].isna()`  
+3. `df['z'].isna()`      
+
+
 
 ```python
 # A
@@ -44,12 +48,14 @@ x     True
 y     True
 z    False
 dtype: bool
-```
+```   
 
-( ) 1-A|2-B|3-C 
-( ) 1-C|2-B|3-A 
-(X) 1-B|2-C|3-A 
-( ) 1-A|2-C|3-B 
+
+
+( ) 1-A | 2-B | 3-C    
+( ) 1-C | 2-B | 3-A    
+(X) 1-B | 2-C | 3-A    
+( ) 1-A | 2-C | 3-B 
 
  
 
