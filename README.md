@@ -22,11 +22,12 @@ Following is a preview of the DataFrame `df`:
 
 
 
-Match the commands with their expected outputs: 
+Match the commands to their expected outputs: 
 
 1. `df.notna().sum()`  
 2. `df.isna().any()`  
 3. `df['z'].isna()`      
+
 
 
 
